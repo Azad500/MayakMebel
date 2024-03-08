@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  /* ------------------------dialog-contact------------------- */
+  .phone-element a,
+  .email-element a {
+    font-size: 18px;
+  }
+  .contact-container {
+    width: 500px;
+    height: 250px;
+  }
+  .contact-informations {
+    gap: 30px;
+  }
+  .contact-informations ol li:first-child .phone-element img {
+    width: 25px;
+  }
+  .contact-informations ol li:first-child .email-element img {
+    width: 25px;
+  }
+  /* ------------------types-contact----------------- */
+  .types-dialog {
+    position: absolute;
+    top: 80px;
+    left: 10%;
+    width: unset;
+    height: unset;
+    z-index: 1;
+    display: none;
+  }
+  .types-center {
+    width: unset;
+    height: unset;
+    display: block;
+  }
+  .types-container {
+    width: 300px;
+  }
+  .types-informations {
+    padding-top: 10px;
+  }
+  .types-container li:first-child {
+    display: none;
+  }
+  .types-title {
+    display: none;
+  }
+  /* ----------------main---------------- */
+  .furniture-catalog {
+    grid-template-columns: repeat(2, 250px);
+  }
+  .furnitureElement {
+    width: 250px;
+  }
+  /* -------------------footer------------------- */
+  footer ul {
+    flex-direction: unset;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  footer ul li:first-child {
+    flex-direction: unset;
+    gap: 20px;
+  }
+  footer ul li:first-child img {
+    width: 70px;
+  }
+}

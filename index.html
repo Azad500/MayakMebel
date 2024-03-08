@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayak-Mebel</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./responsive600.css" />
+    <link rel="stylesheet" href="./responsive992.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- -------------------dialog-contact------------------ -->
+    <div class="contact-dialog">
+      <div class="contact-center">
+        <ul class="contact-container">
+          <li>
+            <img
+              onclick="closeDialog()"
+              src="./images/Icons/remove.png"
+              alt="x icon"
+            />
+          </li>
+          <li class="contact-informations">
+            <h2>Bizimlə Əlaqə</h2>
+            <ol>
+              <li>
+                <div class="phone-element">
+                  <img src="./images/Contact/phone.png" alt="phone" />
+                  <a href="tel:+994505005050">+994505005050</a>
+                </div>
+                <div class="email-element">
+                  <img src="./images/Contact/email.png" alt="email" />
+                  <a href="mailto:mayakbagmebelleri@gmail.com"
+                    >mayakbagmebelleri@gmail.com</a
+                  >
+                </div>
+              </li>
+              <li>
+                <a target="_blank" href="">
+                  <img src="./images/Contact/facebook.png" alt="facebook"
+                /></a>
+                <a target="_blank" href="">
+                  <img src="./images/Contact/instagram.png" alt="instagram"
+                /></a>
+                <a target="_blank" href="">
+                  <img src="./images/Contact/tiktok.png" alt="tiktok"
+                /></a>
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- -------------------dialog-types------------------ -->
+    <div class="types-dialog">
+      <div class="types-center">
+        <ul class="types-container">
+          <li>
+            <img
+              onclick="closeTypes()"
+              src="./images/Icons/remove.png"
+              alt="x-icon"
+            />
+          </li>
+          <li class="types-informations">
+            <div class="types-title">
+              <h2>Kataloq</h2>
+            </div>
+            <form>
+              <div class="types-chechked">
+                <p>Hamısı</p>
+                <input type="checkbox" />
+              </div>
+              <div class="types-chechked">
+                <p>Divan</p>
+                <input type="checkbox" />
+              </div>
+              <div class="types-chechked">
+                <p>Kreslo</p>
+                <input type="checkbox" />
+              </div>
+              <div class="types-chechked">
+                <p>Mətbəx Stolu</p>
+                <input type="checkbox" />
+              </div>
+              <div class="types-chechked">
+                <p>Qonaq Otağı</p>
+                <input type="checkbox" />
+              </div>
+              <div class="types-chechked">
+                <p>Yataq Otağı</p>
+                <input type="checkbox" />
+              </div>
+              <div class="types-submit">
+                <input type="submit" name="submitButton" value="Göstər" />
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- -------------------navbar------------------ -->
+    <header>
+      <nav>
+        <div class="types-element">
+          <button onclick="openTypes()">Kataloq</button>
+        </div>
+        <div class="logo-element">
+          <img src="./images/Logo/mayakmebellogo.png" alt="mayak mebel logo" />
+        </div>
+        <div class="contact-element">
+          <button onclick="openDialog()">Əlaqə</button>
+        </div>
+      </nav>
+      <div>
+        <h1>Mayak Mebel</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+          sunt illo possimus aperiam nobis, doloribus quos tempora? Obcaecati,
+          necessitatibus nostrum?
+        </p>
+      </div>
+    </header>
+    <!-- -------------------main------------------ -->
+    <main>
+      <ul class="furniture-catalog"></ul>
+      <div class="pagination">
+        <button id="prevPage"><<</button>
+        <span id="currentPage">1</span>
+        <button id="nextPage">>></button>
+      </div>
+      <div class="slider">
+        <div class="slider-container"></div>
+      </div>
+    </main>
+    <!-- -------------------footer------------------ -->
+    <footer>
+      <ul>
+        <li>
+          <img src="./images/Logo/mayakmebellogo.png" alt="logo" />
+          <p>Mayak Mebel</p>
+        </li>
+        <li>
+          <a target="_blank" href="">
+            <img src="./images/Contact/facebook.png" alt="facebook"
+          /></a>
+          <a target="_blank" href="">
+            <img src="./images/Contact/instagram.png" alt="instagram"
+          /></a>
+          <a target="_blank" href="">
+            <img src="./images/Contact/tiktok.png" alt="tiktok"
+          /></a>
+        </li>
+      </ul>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

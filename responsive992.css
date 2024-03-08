@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 992px) {
+  /* ------------------types-contact----------------- */
+  .types-dialog {
+    left: 13%;
+  }
+  /* ----------------main---------------- */
+  .furniture-catalog {
+    grid-template-columns: repeat(3, 300px);
+  }
+  .furnitureElement {
+    width: 300px;
+  }
+}

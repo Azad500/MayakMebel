@@ -369,6 +369,13 @@ document.addEventListener("DOMContentLoaded", function () {
     return normalized;
   }
 
+  const logoImage = document.querySelector(".logo-element-img");
+
+  logoImage.addEventListener("click", function () {
+    localStorage.removeItem("selectedTypes");
+    window.location.reload();
+  });
+
   const selectedTypes = JSON.parse(localStorage.getItem("selectedTypes")) || {};
 
   const selectedTypesKeys = Object.keys(selectedTypes).filter(
@@ -595,10 +602,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // ---------------------contactDialog---------------------
 const contactDialog = document.querySelector(".contact-dialog");
 function openDialog() {
-  contactDialog.style.display = "flex";
+  contactDialog.style.display = "block";
   document.body.style.overflow = "hidden";
   typesDialog.style.display = "none";
-  document.body.style.overflow = "unset";
 }
 function closeDialog() {
   contactDialog.style.display = "none";
@@ -644,14 +650,12 @@ const typesDialog = document.querySelector(".types-dialog");
 function openTypes() {
   if (typesDialog.style.display !== "flex") {
     typesDialog.style.display = "flex";
-    document.body.style.overflow = "hidden";
     const typesChecked = document.querySelectorAll("input[type='checkbox']");
     typesChecked.forEach((checkbox) => {
       checkbox.checked = false;
     });
   } else {
     typesDialog.style.display = "none";
-    document.body.style.overflow = "unset";
     const typesCheckedDivs = document.querySelectorAll(".types-chechked");
     typesCheckedDivs.forEach((div) => {
       div.style.backgroundColor = "";

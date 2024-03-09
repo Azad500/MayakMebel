@@ -3,8 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --body-background-color: #482b29;
+  --dialog-background-color-for-body: rgba(0, 0, 0, 0.5);
+  --white-text-color: white;
+  --black-text-color: black;
+  --sunset-orange-background-color: rgb(244, 153, 26);
+  --sunset-orange-background-color-hover: rgba(244, 153, 26, 0.302);
+  --dark-maroon-background-color: rgb(50, 19, 19);
+  --catalog-border-color: rgba(255, 255, 255, 0.387);
+  --in-mobile-format-catalog-header-color: rgba(255, 255, 255, 0.292);
+  --in-mobile-format-catalog-background-color: rgba(0, 0, 0, 0.141);
+  --search-background-color: rgba(255, 255, 255, 0.596);
+}
 body {
-  background-color: #482b29;
+  background-color: var(--body-background-color);
 }
 /* ------------------dialog-contact----------------- */
 .contact-dialog {
@@ -22,14 +35,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--dialog-background-color-for-body);
   backdrop-filter: blur(5px);
-  color: white;
+  color: var(--white-text-color);
 }
 .contact-container {
   width: 90%;
-  height: 240px;
-  background-color: rgb(244, 153, 26);
+  height: 270px;
+  background-color: var(--sunset-orange-background-color);
   border-radius: 5px;
   list-style: none;
 }
@@ -52,7 +65,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: var(--white-text-color);
 }
 .contact-informations h2 {
   font-size: 30px;
@@ -74,21 +87,8 @@ body {
   gap: 15px;
   font-size: 16px;
 }
-@media screen and (min-width: 493px) {
-  .contact-container {
-    height: 235px;
-  }
-  .contact-informations ol {
-    justify-content: space-between;
-  }
-  .contact-informations {
-    gap: 20px;
-  }
-  .contact-informations ol li:first-child {
-    align-items: start;
-  }
-}
-.contact-informations ol li:first-child .phone-element,
+.contact-informations ol li:first-child .location-element,
+.phone-element,
 .email-element {
   display: flex;
   align-items: center;
@@ -96,15 +96,20 @@ body {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+.location-element a,
 .phone-element a,
 .email-element a {
   text-decoration: none;
-  color: white;
+  color: var(--white-text-color);
   font-size: 16px;
 }
-.contact-informations ol li:first-child .phone-element:hover,
+.contact-informations ol li:first-child .location-element:hover,
+.phone-element:hover,
 .email-element:hover {
   transform: scale(1.1);
+}
+.contact-informations ol li:first-child .location-element img {
+  width: 20px;
 }
 .contact-informations ol li:first-child .phone-element img {
   width: 20px;
@@ -141,14 +146,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  color: white;
+  color: var(--white-text-color);
 }
 .types-container {
   width: 90%;
-  background-color: rgb(50, 19, 19);
-  border: 1px solid rgba(255, 255, 255, 0.387);
+  background-color: var(--dark-maroon-background-color);
+  border: 1px solid var(--catalog-border-color);
   border-radius: 5px;
   list-style: none;
   padding-bottom: 20px;
@@ -185,7 +188,7 @@ body {
   cursor: pointer;
 }
 .types-informations form .types-chechked:hover {
-  background-color: rgba(244, 153, 26, 0.302);
+  background-color: var(--sunset-orange-background-color-hover);
 }
 .types-informations form .types-submit {
   width: 100%;
@@ -201,8 +204,8 @@ body {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  background-color: rgb(244, 153, 26);
-  color: white;
+  background-color: var(--sunset-orange-background-color);
+  color: var(--white-text-color);
 }
 .types-informations form .types-chechked p {
   width: 70%;
@@ -223,24 +226,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--dialog-background-color-for-body);
   backdrop-filter: blur(5px);
-  color: white;
+  color: var(--white-text-color);
 }
 .search-container {
   width: 90%;
-  background-color: rgb(244, 153, 26);
+  background-color: var(--sunset-orange-background-color);
   border-radius: 5px;
   list-style: none;
   display: flex;
   flex-direction: column;
   padding: 10px;
   padding-bottom: 30px;
-}
-@media screen and (min-width: 500px) {
-  .search-container {
-    width: 450px;
-  }
 }
 .close-search-part {
   display: flex;
@@ -260,16 +258,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-}
-@media screen and (min-width: 768px) {
-  .search-container {
-    width: 700px;
-  }
-  .informations {
-    flex-direction: unset;
-    justify-content: space-between;
-    align-items: start;
-  }
 }
 .image-list {
   width: 40%;
@@ -306,6 +294,7 @@ nav {
 }
 .logo-element img {
   width: 70px;
+  cursor: pointer;
 }
 .contact-element button,
 .types-element button {
@@ -313,13 +302,13 @@ nav {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  background-color: rgb(244, 153, 26);
+  background-color: var(--sunset-orange-background-color);
   font-size: 14px;
-  color: white;
+  color: var(--white-text-color);
   transition: all 0.5s ease;
 }
 .types-element button {
-  background-color: rgb(50, 19, 19);
+  background-color: var(--dark-maroon-background-color);
 }
 .contact-element button:hover,
 .types-element button:hover {
@@ -334,12 +323,12 @@ header div:last-child {
 header div:last-child h1 {
   font-size: 40px;
   font-family: "Caveat";
-  color: white;
+  color: var(--white-text-color);
 }
 header div:last-child p {
   font-size: 16px;
   text-align: center;
-  color: white;
+  color: var(--white-text-color);
   margin-bottom: 20px;
 }
 /* ----------------main---------------- */
@@ -357,7 +346,7 @@ main {
 .furniture-catalog li {
   transition: all 0.5s ease;
   margin: auto;
-  color: white;
+  color: var(--white-text-color);
 }
 .furnitureContainer {
   position: relative;
@@ -376,11 +365,11 @@ main {
   width: 100%;
   padding: 7px;
   margin-top: -5px;
-  border: 1px solid rgba(255, 255, 255, 0.292);
+  border: 1px solid var(--in-mobile-format-catalog-header-color);
   border-top: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.141);
+  background-color: var(--in-mobile-format-catalog-background-color);
 }
 .searchElementMobileFormat {
   width: 30px;
@@ -396,7 +385,7 @@ main {
   border-bottom-right-radius: 10px;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.596);
+  background-color: var(--search-background-color);
 }
 .searchElement {
   width: 35px;
@@ -415,31 +404,8 @@ main {
   overflow: hidden;
   display: -webkit-inline-box;
   padding-top: 10px;
-  color: black;
+  color: var(--black-text-color);
 }
-@media screen and (min-width: 768px) {
-  .catalogHeaderText {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    margin-top: 0px;
-    border: none;
-    background-color: transparent;
-  }
-  .searchElementMobileFormat {
-    display: none;
-  }
-  .furniture-catalog li:hover {
-    transform: scale(1.1);
-  }
-  .furniture-catalog li div:hover .searchContainer {
-    display: flex;
-    animation: slideDown 0.5s ease forwards;
-  }
-}
-
 @keyframes slideDown {
   from {
     transform: translateY(-30px);
@@ -456,7 +422,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  background-color: white;
+  background-color: var(--white-text-color);
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -468,7 +434,7 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--dialog-background-color-for-body);
   z-index: 999;
   display: none;
 }
@@ -486,11 +452,11 @@ main {
   border-radius: 10px;
   cursor: pointer;
   border: none;
-  background-color: rgb(244, 153, 26);
-  color: white;
+  background-color: var(--sunset-orange-background-color);
+  color: var(--white-text-color);
 }
 .pagination span {
-  color: white;
+  color: var(--white-text-color);
 }
 .pagination button:active {
   transform: scale(0.95);
@@ -523,7 +489,7 @@ main {
 }
 /* -------------------footer------------------- */
 footer {
-  background-color: black;
+  background-color: var(--black-text-color);
   padding: 30px 0;
 }
 footer ul {
@@ -539,7 +505,36 @@ footer ul li:first-child {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: white;
+  color: var(--white-text-color);
+}
+footer ul li:nth-child(2) {
+  display: flex;
+  gap: 20px;
+}
+.location-element-in-footer,
+.phone-element-in-footer,
+.email-element-in-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.location-element-in-footer img,
+.phone-element-in-footer img,
+.email-element-in-footer img {
+  width: 25px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.location-element-in-footer img:hover,
+.phone-element-in-footer img:hover,
+.email-element-in-footer img:hover {
+  transform: scale(1.1);
+}
+.location-element-in-footer a,
+.phone-element-in-footer a,
+.email-element-in-footer a {
+  color: var(--white-text-color);
+  text-decoration: none;
 }
 footer ul li:first-child img {
   width: 50px;
@@ -553,7 +548,7 @@ footer ul li:last-child {
   gap: 20px;
 }
 footer ul li:last-child a img {
-  width: 30px;
+  width: 25px;
   transition: all 0.5s ease;
 }
 footer ul li:last-child a img:hover {

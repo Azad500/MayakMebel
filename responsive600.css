@@ -5,16 +5,17 @@
 }
 @media screen and (min-width: 600px) {
   /* ------------------------dialog-contact------------------- */
+  .location-element a,
   .phone-element a,
   .email-element a {
     font-size: 18px;
   }
   .contact-container {
     width: 500px;
-    height: 250px;
+    height: 270px;
   }
-  .contact-informations {
-    gap: 30px;
+  .contact-informations ol li:first-child .location-element img {
+    width: 25px;
   }
   .contact-informations ol li:first-child .phone-element img {
     width: 25px;
@@ -55,18 +56,5 @@
   }
   .furnitureElement {
     width: 250px;
-  }
-  /* -------------------footer------------------- */
-  footer ul {
-    flex-direction: unset;
-    justify-content: space-between;
-    gap: 0px;
-  }
-  footer ul li:first-child {
-    flex-direction: unset;
-    gap: 20px;
-  }
-  footer ul li:first-child img {
-    width: 70px;
   }
 }

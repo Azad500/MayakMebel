@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 650px) {
+  /* -------------------footer------------------- */
+  footer ul {
+    flex-direction: unset;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  footer ul li:first-child {
+    flex-direction: unset;
+    gap: 20px;
+  }
+  footer ul li:first-child img {
+    width: 70px;
+  }
+  footer ul li:last-child a img {
+    width: 30px;
+  }
+  .location-element-in-footer img,
+  .phone-element-in-footer img,
+  .email-element-in-footer img {
+    width: 30px;
+  }
+}
